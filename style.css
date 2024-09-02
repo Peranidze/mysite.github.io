@@ -575,7 +575,11 @@ main .wrapper .container .container_content {
   align-items: center;
   padding-top: 100px;
 }
-
+@media (max-width : 500px) {
+  main .wrapper .container .container_content{
+    padding-top: 50px;
+  }
+}
 main .wrapper .container img {
   z-index: 0;
   width: 100%;
@@ -611,7 +615,12 @@ main .wrapper .container .container_content p {
   padding-right: 20px;
   padding-top: 20px;
 }
-
+@media (max-width : 500px) {
+  main .wrapper .container .container_content p{
+    font-size: 25px;
+    text-align: center;
+  }
+}
 main .wrapper .container .container_content .line {
   width: 72%;
   height: 1px;
@@ -628,7 +637,12 @@ main .wrapper .container .container_content .add_container {
   padding-left: 16px;
   padding-right: 16px;
 }
-
+@media (max-width: 500px) {
+  main .wrapper .container .container_content .add_container {
+    justify-content: center;
+    gap: 30px;
+  }
+}
 .container_content .add_container .block {
   display: flex;
   width: 100%;
@@ -648,6 +662,11 @@ main .wrapper .container .container_content .add_container {
   gap: 45px;
   padding-bottom: 0px;
 }
+@media (max-width: 500px) {
+  .container_content .add_container .block{
+    height: 200px;
+  }
+}
 .container_content .add_container .block:hover{
   transform: scale(1.04);
   box-shadow: 0px 0px 16px 6px rgba(255, 255, 255, 0.2);
@@ -666,13 +685,28 @@ main .wrapper .container .container_content .add_container {
   height: 200px;
   position: unset;
 }
+@media (max-width: 500px) {
+  .container_content .add_container .block img{
+    height: 190px !important;
+  }
+}
 .container_content .add_container .block .fd{
   width: 200px;
   height: 170px;
 }
+@media (max-width: 500px) {
+  .container_content .add_container .block .fd{
+    height: 145px !important;
+  }
+}
 .container_content .add_container .block .hand{
   width: 150px;
   height: 150px;
+}
+@media (max-width: 500px) {
+  .container_content .add_container .block .hand{
+    height: 150px !important;
+  }
 }
 .text-box {
   width: 100%;
@@ -823,6 +857,11 @@ main .wrapper .container .container_content .add_container {
   padding-bottom: 100px;
   padding-top: 100px;
 }
+@media (max-width: 500px) {
+  .container_content_one{
+    padding-top: unset;
+  }
+}
 .container_content_one .block_btn{
   display: flex;
   justify-content: flex-end;
@@ -875,7 +914,11 @@ main .wrapper .container .container_content .add_container {
   flex-wrap: wrap;
   align-items: center;
 }
-
+@media (max-width: 500px) {
+  #block_two_img{
+    flex-direction: column-reverse;
+  }
+}
 .container_content_one p{
   font-size: 20px;
   line-height: 1.5;
@@ -887,17 +930,31 @@ main .wrapper .container .container_content .add_container {
   height: 100%;
   color: rgb(163, 162, 162);
 }
+@media (max-width:500px) {
+  .container_content_one p{
+    font-size: 17px;
+  }
+}
 .container_content_one p span{
   font-weight: 400;
   font-size: 23px;
   color: white;
+}
+@media (max-width:500px) {
+  .container_content_one p span{
+    font-size: 20px;
+  }
 }
 .wrapper_about_us .container img{
   width: 100%;
   max-width: 400px;
   border-radius: 60%;
 }
-
+@media (max-width: 500px) {
+  .wrapper_about_us .container img{
+    max-width: 270px;
+  }
+}
 .container_our_works{
   width: 100%;
   max-width: 1190px;
