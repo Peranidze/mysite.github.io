@@ -1,0 +1,247 @@
+// SmoothScroll({
+//     // Время скролла 400 = 0.4 секунды
+//     animationTime: 800,
+//     // Размер шага в пикселях 
+//     stepSize: 75,
+
+//     // Дополнительные настройки:
+
+//     // Ускорение 
+//     accelerationDelta: 30,
+//     // Максимальное ускорение
+//     accelerationMax: 2,
+
+//     // Поддержка клавиатуры
+//     keyboardSupport: true,
+//     // Шаг скролла стрелками на клавиатуре в пикселях
+//     arrowScroll: 50,
+
+//     // Pulse (less tweakable)
+//     // ratio of "tail" to "acceleration"
+//     pulseAlgorithm: true,
+//     pulseScale: 4,
+//     pulseNormalize: 1,
+
+//     // Поддержка тачпада
+//     touchpadSupport: true,
+// })
+
+const button_menu = document.querySelector('#menu-btn')
+const menu = document.querySelector('.header_container_nav');
+const contant_left = document.querySelector('.contant_left');
+const contant_right = document.querySelector('.contant_right');
+const line = document.querySelector('.line');
+const gif = document.querySelector('.gif');
+const main = document.querySelector('main')
+
+button_menu.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (button_menu.classList.contains('open')) {
+        button_menu.classList.remove('open');
+        button_menu.classList.add('close');
+    } else {
+        button_menu.classList.remove('close');
+        button_menu.classList.add('open');
+    }
+    menu.classList.toggle('activator_menu')
+    setTimeout(containerLeftActive, 450);
+    setTimeout(containerRightActive, 850);
+    setTimeout(gifActive, 400)
+    line.classList.toggle('activator_line')
+    main.classList.toggle('activator_main')
+});
+
+function containerLeftActive() {
+    contant_left.classList.toggle('activator_navblock');
+    console.log('Да')
+}
+function containerRightActive() {
+    contant_right.classList.toggle('activator_navblock');
+}
+function gifActive() {
+    gif.classList.toggle('activator_gif')
+}
+
+
+// const date = new Date();
+// const monthName = date.toLocaleString('default', { month: 'long' });
+// const now_month = monthName.charAt(0).toUpperCase() + monthName.slice(1)
+// const now_day = date.getDate();
+// const data_block = document.querySelector('.now_data');
+// data_block.innerHTML = '';
+// data_block.innerHTML = now_day + ' ' + now_month + 'а';
+
+const wrapper_about = document.querySelector('.wrapper_about');
+
+wrapper_about.addEventListener('mousemove', e => {
+    const x = e.clientX;
+    const y = e.clientY;
+    wrapper_about.style.background = `radial-gradient(circle at ${x}px ${y}px, rgb(66 65 65), #0f172a)`;
+});
+const choice_block_one = document.querySelector('#first_block');
+
+
+const choice_block_line_one = choice_block_one.querySelector('.line');
+const choice_block_text_one = choice_block_one.querySelector('a');
+
+choice_block_line_one.classList.add('line_active');
+choice_block_text_one.classList.add('text_active');
+
+const choice_block_two = document.querySelector('#second_block');
+
+const choice_block_line_two = choice_block_two.querySelector('.line');
+const choice_block_text_two = choice_block_two.querySelector('a');
+
+const choice_block_three = document.querySelector('#third_block');
+
+const choice_block_line_three = choice_block_three.querySelector('.line');
+const choice_block_text_three = choice_block_three.querySelector('a');
+
+choice_block_one.addEventListener('click', () => {
+    choice_block_line_one.classList.add('line_active');
+    choice_block_text_one.classList.add('text_active');
+
+    choice_block_line_two.classList.remove('line_active');
+    choice_block_text_two.classList.remove('text_active');
+    choice_block_line_three.classList.remove('line_active');
+    choice_block_text_three.classList.remove('text_active');
+})
+
+choice_block_two.addEventListener('click', () => {
+    choice_block_line_two.classList.add('line_active');
+    choice_block_text_two.classList.add('text_active');
+
+    choice_block_line_one.classList.remove('line_active');
+    choice_block_text_one.classList.remove('text_active');
+    choice_block_line_three.classList.remove('line_active');
+    choice_block_text_three.classList.remove('text_active');
+})
+
+choice_block_three.addEventListener('click', () => {
+    choice_block_line_three.classList.add('line_active');
+    choice_block_text_three.classList.add('text_active');
+
+    choice_block_line_two.classList.remove('line_active');
+    choice_block_text_two.classList.remove('text_active');
+    choice_block_line_one.classList.remove('line_active');
+    choice_block_text_one.classList.remove('text_active');
+})
+
+
+
+// Получаем нужный элемент
+const text_about = document.querySelector('.container_our_works .container_content p');
+const knowledge_block = document.querySelector('.container_our_works .container_content .lists_block');
+const projects_block = document.querySelector('.container_our_works .container_content .projects_block');
+
+var Visible_text = function (target) {
+    // Все позиции элемента
+    var targetPosition = {
+        top: window.scrollY + target.getBoundingClientRect().top,
+        left: window.scrollX + target.getBoundingClientRect().left,
+        right: window.scrollX + target.getBoundingClientRect().right,
+        bottom: window.scrollY + target.getBoundingClientRect().bottom
+    },
+        // Получаем позиции окна
+        windowPosition = {
+            top: window.scrollY,
+            left: window.scrollX,
+            right: window.scrollX + document.documentElement.clientWidth,
+            bottom: window.scrollY + document.documentElement.clientHeight
+        };
+    if (targetPosition.top >= 2004.7777252197266) {
+        choice_block_line_one.classList.add('line_active');
+        choice_block_text_one.classList.add('text_active');
+    } else {
+        // Если элемент не видно, то запускаем этот код
+        choice_block_line_one.classList.remove('line_active');
+        choice_block_text_one.classList.remove('text_active');
+    };
+};
+Visible_text(text_about);
+var scroll_content = document.querySelector('.container_our_works .container_content ');
+// Запускаем функцию при прокрутке страницы
+scroll_content.addEventListener('scroll', function () {
+    Visible_text(text_about);
+});
+
+var Visible_knowledge = function (target) {
+    // Все позиции элемента
+    var targetPosition = {
+        top: window.scrollY + target.getBoundingClientRect().top,
+        left: window.scrollX + target.getBoundingClientRect().left,
+        right: window.scrollX + target.getBoundingClientRect().right,
+        bottom: window.scrollY + target.getBoundingClientRect().bottom
+    },
+        // Получаем позиции окна
+        windowPosition = {
+            top: window.scrollY,
+            left: window.scrollX,
+            right: window.scrollX + document.documentElement.clientWidth,
+            bottom: window.scrollY + document.documentElement.clientHeight
+        };
+    if (targetPosition.top <= 2516.8888244628906 ) {
+        choice_block_line_two.classList.add('line_active');
+        choice_block_text_two.classList.add('text_active');
+    }else{
+        choice_block_line_two.classList.remove('line_active');
+        choice_block_text_two.classList.remove('text_active');
+    }
+    if(targetPosition.bottom <= 2421.0554809570312){
+        choice_block_line_two.classList.remove('line_active');
+        choice_block_text_two.classList.remove('text_active');
+    }
+};
+Visible_knowledge(knowledge_block);
+
+// Запускаем функцию при прокрутке страницы
+scroll_content.addEventListener('scroll', function () {
+    Visible_knowledge(knowledge_block);
+});
+
+var Visible_projects = function (target) {
+    // Все позиции элемента
+    var targetPosition = {
+        top: window.scrollY + target.getBoundingClientRect().top,
+        left: window.scrollX + target.getBoundingClientRect().left,
+        right: window.scrollX + target.getBoundingClientRect().right,
+        bottom: window.scrollY + target.getBoundingClientRect().bottom
+    },
+        // Получаем позиции окна
+        windowPosition = {
+            top: window.scrollY,
+            left: window.scrollX,
+            right: window.scrollX + document.documentElement.clientWidth,
+            bottom: window.scrollY + document.documentElement.clientHeight
+        };
+        console.log(targetPosition.top)
+    if (targetPosition.top <= 2424.833282470703) {
+        choice_block_line_three.classList.add('line_active');
+        choice_block_text_three.classList.add('text_active');
+    } else {
+        // Если элемент не видно, то запускаем этот код
+        choice_block_line_three.classList.remove('line_active');
+        choice_block_text_three.classList.remove('text_active');
+    };
+};
+Visible_projects(projects_block);
+
+// Запускаем функцию при прокрутке страницы
+scroll_content.addEventListener('scroll', function () {
+    Visible_projects(projects_block);
+});
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href').substr(1)
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}
