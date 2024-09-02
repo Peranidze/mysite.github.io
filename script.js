@@ -70,7 +70,7 @@ const main = document.querySelector('main')
 // const data_block = document.querySelector('.now_data');
 // data_block.innerHTML = '';
 // data_block.innerHTML = now_day + ' ' + now_month + 'а';
-
+console.log('Да')
 const wrapper_about = document.querySelector('.wrapper_about');
 
 wrapper_about.addEventListener('mousemove', e => {
