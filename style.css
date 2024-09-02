@@ -536,7 +536,7 @@ header .header_container_nav nav .line {
 
 main {
   width: 100%;
-  max-width: calc(100vw - 80px);
+  /* max-width: calc(100vw - 80px); */
   overflow: hidden;
   overflow-y: auto;
   float: right;
