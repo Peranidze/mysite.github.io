@@ -867,6 +867,11 @@ main .wrapper .container .container_content .add_container {
   justify-content: flex-end;
 
 }
+@media (max-width: 500px) {
+  .container_content_one .block_btn{
+    justify-content: center;
+  }
+}
 .container_content_one .button{
   background-color: white;
   width: 100%;
@@ -915,7 +920,9 @@ main .wrapper .container .container_content .add_container {
   align-items: center;
 }
 @media (max-width: 500px) {
-
+  #block_one, #block_three{
+    flex-direction: column-reverse;
+  }
 }
 .container_content_one p{
   font-size: 20px;
