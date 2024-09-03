@@ -915,9 +915,7 @@ main .wrapper .container .container_content .add_container {
   align-items: center;
 }
 @media (max-width: 500px) {
-  #block_two_img{
-    flex-direction: column-reverse;
-  }
+
 }
 .container_content_one p{
   font-size: 20px;
