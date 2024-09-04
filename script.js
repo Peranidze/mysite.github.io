@@ -97,6 +97,7 @@ const choice_block_three = document.querySelector('#third_block');
 const choice_block_line_three = choice_block_three.querySelector('.line');
 const choice_block_text_three = choice_block_three.querySelector('a');
 
+
 choice_block_one.addEventListener('click', () => {
     choice_block_line_one.classList.add('line_active');
     choice_block_text_one.classList.add('text_active');
@@ -138,7 +139,7 @@ var topText = function (target) {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
-    let height = targetPosition.top - 615;
+    let height = targetPosition.top;
     return height
 }
 const height_history = topText(text_about)
@@ -151,116 +152,116 @@ const height_history = topText(text_about)
 //     return height
 // }
 
-var Visible_text = function (target) {
-    // Все позиции элемента
-    var targetPosition = {
-        top: window.scrollY + target.getBoundingClientRect().top,
-        left: window.scrollX + target.getBoundingClientRect().left,
-        right: window.scrollX + target.getBoundingClientRect().right,
-        bottom: window.scrollY + target.getBoundingClientRect().bottom
-    },
-        // Получаем позиции окна
-        windowPosition = {
-            top: window.scrollY,
-            left: window.scrollX,
-            right: window.scrollX + document.documentElement.clientWidth,
-            bottom: window.scrollY + document.documentElement.clientHeight
-        };
-    if (document.documentElement.clientWidth > 768) {
-        if (targetPosition.top >= 2004.7777252197266) {
-            choice_block_line_one.classList.add('line_active');
-            choice_block_text_one.classList.add('text_active');
-        } else {
-            // Если элемент не видно, то запускаем этот код
-            choice_block_line_one.classList.remove('line_active');
-            choice_block_text_one.classList.remove('text_active');
-        };
-    }
-    if (document.documentElement.clientWidth < 768) {
-        if (targetPosition.top >= height_history) {
-            choice_block_line_one.classList.add('line_active');
-            choice_block_text_one.classList.add('text_active');
-        }
-        if (targetPosition.top <= height_history) {
-            // Если элемент не видно, то запускаем этот код
-            choice_block_line_one.classList.remove('line_active');
-            choice_block_text_one.classList.remove('text_active');
-        };
+// var Visible_text = function (target) {
+//     // Все позиции элемента
+//     var targetPosition = {
+//         top: window.scrollY + target.getBoundingClientRect().top,
+//         left: window.scrollX + target.getBoundingClientRect().left,
+//         right: window.scrollX + target.getBoundingClientRect().right,
+//         bottom: window.scrollY + target.getBoundingClientRect().bottom
+//     },
+//         // Получаем позиции окна
+//         windowPosition = {
+//             top: window.scrollY,
+//             left: window.scrollX,
+//             right: window.scrollX + document.documentElement.clientWidth,
+//             bottom: window.scrollY + document.documentElement.clientHeight
+//         };
+//     if (document.documentElement.clientWidth > 768) {
+//         if (targetPosition.top >= 2004.7777252197266) {
+//             choice_block_line_one.classList.add('line_active');
+//             choice_block_text_one.classList.add('text_active');
+//         } else {
+//             // Если элемент не видно, то запускаем этот код
+//             choice_block_line_one.classList.remove('line_active');
+//             choice_block_text_one.classList.remove('text_active');
+//         };
+//     }
+//     if (document.documentElement.clientWidth < 768) {
+//         if (targetPosition.top >= height_history) {
+//             choice_block_line_one.classList.add('line_active');
+//             choice_block_text_one.classList.add('text_active');
+//         }
+//         if (targetPosition.top <= height_history) {
+//             // Если элемент не видно, то запускаем этот код
+//             choice_block_line_one.classList.remove('line_active');
+//             choice_block_text_one.classList.remove('text_active');
+//         };
 
-    }
+//     }
 
-};
-Visible_text(text_about);
-var scroll_content = document.querySelector('.container_our_works .container_content ');
-// Запускаем функцию при прокрутке страницы
-scroll_content.addEventListener('scroll', function () {
-    Visible_text(text_about);
-});
+// };
+// Visible_text(text_about);
+// var scroll_content = document.querySelector('.container_our_works .container_content ');
+// // Запускаем функцию при прокрутке страницы
+// scroll_content.addEventListener('scroll', function () {
+//     Visible_text(text_about);
+// });
 
-var Visible_knowledge = function (target) {
-    // Все позиции элемента
-    var targetPosition = {
-        top: window.scrollY + target.getBoundingClientRect().top,
-        left: window.scrollX + target.getBoundingClientRect().left,
-        right: window.scrollX + target.getBoundingClientRect().right,
-        bottom: window.scrollY + target.getBoundingClientRect().bottom
-    },
-        // Получаем позиции окна
-        windowPosition = {
-            top: window.scrollY,
-            left: window.scrollX,
-            right: window.scrollX + document.documentElement.clientWidth,
-            bottom: window.scrollY + document.documentElement.clientHeight
-        };
-    if (targetPosition.top <= 2516.8888244628906) {
-        choice_block_line_two.classList.add('line_active');
-        choice_block_text_two.classList.add('text_active');
-    } else {
-        choice_block_line_two.classList.remove('line_active');
-        choice_block_text_two.classList.remove('text_active');
-    }
-    if (targetPosition.bottom <= 2421.0554809570312) {
-        choice_block_line_two.classList.remove('line_active');
-        choice_block_text_two.classList.remove('text_active');
-    }
-};
-Visible_knowledge(knowledge_block);
+// var Visible_knowledge = function (target) {
+//     // Все позиции элемента
+//     var targetPosition = {
+//         top: window.scrollY + target.getBoundingClientRect().top,
+//         left: window.scrollX + target.getBoundingClientRect().left,
+//         right: window.scrollX + target.getBoundingClientRect().right,
+//         bottom: window.scrollY + target.getBoundingClientRect().bottom
+//     },
+//         // Получаем позиции окна
+//         windowPosition = {
+//             top: window.scrollY,
+//             left: window.scrollX,
+//             right: window.scrollX + document.documentElement.clientWidth,
+//             bottom: window.scrollY + document.documentElement.clientHeight
+//         };
+//     if (targetPosition.top <= 2516.8888244628906) {
+//         choice_block_line_two.classList.add('line_active');
+//         choice_block_text_two.classList.add('text_active');
+//     } else {
+//         choice_block_line_two.classList.remove('line_active');
+//         choice_block_text_two.classList.remove('text_active');
+//     }
+//     if (targetPosition.bottom <= 2421.0554809570312) {
+//         choice_block_line_two.classList.remove('line_active');
+//         choice_block_text_two.classList.remove('text_active');
+//     }
+// };
+// Visible_knowledge(knowledge_block);
 
-// Запускаем функцию при прокрутке страницы
-scroll_content.addEventListener('scroll', function () {
-    Visible_knowledge(knowledge_block);
-});
+// // Запускаем функцию при прокрутке страницы
+// scroll_content.addEventListener('scroll', function () {
+//     Visible_knowledge(knowledge_block);
+// });
 
-var Visible_projects = function (target) {
-    // Все позиции элемента
-    var targetPosition = {
-        top: window.scrollY + target.getBoundingClientRect().top,
-        left: window.scrollX + target.getBoundingClientRect().left,
-        right: window.scrollX + target.getBoundingClientRect().right,
-        bottom: window.scrollY + target.getBoundingClientRect().bottom
-    },
-        // Получаем позиции окна
-        windowPosition = {
-            top: window.scrollY,
-            left: window.scrollX,
-            right: window.scrollX + document.documentElement.clientWidth,
-            bottom: window.scrollY + document.documentElement.clientHeight
-        };
-    if (targetPosition.top <= 2424.833282470703) {
-        choice_block_line_three.classList.add('line_active');
-        choice_block_text_three.classList.add('text_active');
-    } else {
-        // Если элемент не видно, то запускаем этот код
-        choice_block_line_three.classList.remove('line_active');
-        choice_block_text_three.classList.remove('text_active');
-    };
-};
-Visible_projects(projects_block);
+// var Visible_projects = function (target) {
+//     // Все позиции элемента
+//     var targetPosition = {
+//         top: window.scrollY + target.getBoundingClientRect().top,
+//         left: window.scrollX + target.getBoundingClientRect().left,
+//         right: window.scrollX + target.getBoundingClientRect().right,
+//         bottom: window.scrollY + target.getBoundingClientRect().bottom
+//     },
+//         // Получаем позиции окна
+//         windowPosition = {
+//             top: window.scrollY,
+//             left: window.scrollX,
+//             right: window.scrollX + document.documentElement.clientWidth,
+//             bottom: window.scrollY + document.documentElement.clientHeight
+//         };
+//     if (targetPosition.top <= 2424.833282470703) {
+//         choice_block_line_three.classList.add('line_active');
+//         choice_block_text_three.classList.add('text_active');
+//     } else {
+//         // Если элемент не видно, то запускаем этот код
+//         choice_block_line_three.classList.remove('line_active');
+//         choice_block_text_three.classList.remove('text_active');
+//     };
+// };
+// Visible_projects(projects_block);
 
-// Запускаем функцию при прокрутке страницы
-scroll_content.addEventListener('scroll', function () {
-    Visible_projects(projects_block);
-});
+// // Запускаем функцию при прокрутке страницы
+// scroll_content.addEventListener('scroll', function () {
+//     Visible_projects(projects_block);
+// });
 
 const anchors = document.querySelectorAll('a[href*="#"]')
 
@@ -276,3 +277,42 @@ for (let anchor of anchors) {
         })
     })
 }
+
+
+
+
+// Получаем нужный элемент
+var element = document.querySelector('#text_about');
+let container_content = document.querySelector('.container_our_works .container_content')
+var Visible = function (target) {
+    // Все позиции элемента
+    var targetPosition = {
+        top: window.scrollY + target.getBoundingClientRect().top,
+        left: window.scrollX + target.getBoundingClientRect().left,
+        right: window.scrollX + target.getBoundingClientRect().right,
+        bottom: window.scrollY + target.getBoundingClientRect().bottom
+    },
+        // Получаем позиции окна
+        windowPosition = {
+            top: window.scrollY,
+            left: window.scrollX,
+            right: window.scrollX + document.documentElement.clientWidth,
+            bottom: window.scrollY + document.documentElement.clientHeight
+        };
+    if (targetPosition.top <= height_history &&
+        targetPosition.bottom > height_history) {
+        choice_block_line_one.classList.add('line_active');
+        choice_block_text_one.classList.add('text_active');
+    } else {
+        choice_block_line_one.classList.remove('line_active');
+        choice_block_text_one.classList.remove('text_active');
+    };
+};
+
+// Запускаем функцию при прокрутке страницы
+container_content.addEventListener('scroll', function () {
+    Visible(element);
+});
+
+// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+Visible(element);

@@ -1174,7 +1174,7 @@ main .wrapper .container .container_content .add_container {
   line-height: 1.4;
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
-  padding-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .container_our_works .container_content p span {
