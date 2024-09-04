@@ -71,13 +71,13 @@ const main = document.querySelector('main')
 // data_block.innerHTML = '';
 // data_block.innerHTML = now_day + ' ' + now_month + 'а';
 console.log('Да')
-const wrapper_about = document.querySelector('.wrapper_about');
+// const wrapper_about = document.querySelector('.wrapper_about');
 
-wrapper_about.addEventListener('mousemove', e => {
-    const x = e.clientX;
-    const y = e.clientY;
-    wrapper_about.style.background = `radial-gradient(circle at ${x}px ${y}px, rgb(66 65 65), #0f172a)`;
-});
+// wrapper_about.addEventListener('mousemove', e => {
+//     const x = e.clientX;
+//     const y = e.clientY;
+//     wrapper_about.style.background = `radial-gradient(circle at ${x}px ${y}px, rgb(66 65 65), #0f172a)`;
+// });
 const choice_block_one = document.querySelector('#first_block');
 
 
