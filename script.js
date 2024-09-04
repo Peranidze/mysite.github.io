@@ -234,7 +234,7 @@ var Visible_text = function (target) {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
-    console.log("Элемен :",targetPosition.top, "Блок:",Math.round(height_history) )
+    console.log("Элемен :", targetPosition.top, "Блок:", Math.round(height_history))
     if (targetPosition.top <= Math.round(height_history) &&
         targetPosition.bottom > Math.round(height_history)) {
         choice_block_line_one.classList.add('line_active');
@@ -243,10 +243,10 @@ var Visible_text = function (target) {
         choice_block_line_one.classList.remove('line_active');
         choice_block_text_one.classList.remove('text_active');
     };
-    if(choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')){
+    if (choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')) {
         choice_block_line_two.classList.remove('line_active');
         choice_block_text_two.classList.remove('text_active');
-    }else{
+    } else {
         choice_block_line_two.classList.add('line_active');
         choice_block_text_two.classList.add('text_active');
     }
