@@ -1132,7 +1132,12 @@ main .wrapper .container .container_content .add_container {
   flex-direction: row;
   justify-content: space-around;
 }
-
+@media (max-width: 500px) {
+  .wrapper_about{
+    padding-top: 50px;
+    height: 100vh;
+  }
+}
 .container_our_works .container_content {
   width: 100%;
   max-width: 565px;
