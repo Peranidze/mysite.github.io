@@ -661,11 +661,7 @@ main .wrapper .container .container_content .add_container {
   gap: 45px;
   padding-bottom: 0px;
 }
-@media (max-width: 500px) {
-  .container_content .add_container .block{
-    height: 200px;
-  }
-}
+
 .container_content .add_container .block:hover{
   transform: scale(1.04);
   box-shadow: 0px 0px 16px 6px rgba(255, 255, 255, 0.2);
@@ -858,7 +854,7 @@ main .wrapper .container .container_content .add_container {
 }
 @media (max-width: 500px) {
   .container_content_one{
-    padding-top: unset;
+    padding-top: 50px;
   }
 }
 .container_content_one .block_btn{
