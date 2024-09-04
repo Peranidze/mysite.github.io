@@ -161,7 +161,7 @@ var Visible_text = function (target) {
         };
     }
     if (document.documentElement.clientWidth < 768) {
-        if (targetPosition.top >= 3195.999954223633) {
+        if (targetPosition.top >= 3292.499954223633) {
             choice_block_line_one.classList.add('line_active');
             choice_block_text_one.classList.add('text_active');
         } else {
