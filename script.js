@@ -226,7 +226,7 @@ for (let anchor of anchors) {
 
 
 
-
+let height_two;
 
 let container_content = document.querySelector('.container_our_works .container_content')
 var Visible_text = function (target) {
@@ -234,6 +234,8 @@ var Visible_text = function (target) {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
+    height_two = targetPosition.top;
+    console.log(targetPosition.top,height_history )
     if (targetPosition.top <= height_history &&
         targetPosition.bottom > height_history) {
         choice_block_line_one.classList.add('line_active');
