@@ -661,7 +661,11 @@ main .wrapper .container .container_content .add_container {
   gap: 45px;
   padding-bottom: 0px;
 }
-
+@media (max-width: 500px) {
+  .container_content .add_container .block {
+    pointer-events: none;
+  }
+}
 .container_content .add_container .block:hover{
   transform: scale(1.04);
   box-shadow: 0px 0px 16px 6px rgba(255, 255, 255, 0.2);
