@@ -1233,6 +1233,7 @@ main .wrapper .container .container_content .add_container {
 .container_our_works .container_content .lists_block .list .content .info {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
