@@ -234,9 +234,9 @@ var Visible_text = function (target) {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
-    console.log("Элемен :", targetPosition.top, "Блок:", Math.round(height_history))
-    if (targetPosition.top <= Math.round(height_history) &&
-        targetPosition.bottom > Math.round(height_history)) {
+    console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
+    if (Math.round(targetPosition.top) <= Math.round(height_history) &&
+    Math.round(targetPosition.bottom) > Math.round(height_history)) {
         choice_block_line_one.classList.add('line_active');
         choice_block_text_one.classList.add('text_active');
     } else {
