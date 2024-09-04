@@ -1155,7 +1155,7 @@ main .wrapper .container .container_content .add_container {
 @media (max-width: 500px) {
   .container_our_works .container_content {
     max-height: unset;
-    height: 755px;
+    height: 497px;
   }
 }
 
