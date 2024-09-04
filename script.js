@@ -235,7 +235,7 @@ var Visible_text = function (target) {
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
     height_two = targetPosition.top;
-    console.log(targetPosition.top,height_history )
+    console.log(targetPosition.top)
     if (targetPosition.top <= height_history &&
         targetPosition.bottom > height_history) {
         choice_block_line_one.classList.add('line_active');
