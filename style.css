@@ -1132,12 +1132,14 @@ main .wrapper .container .container_content .add_container {
   flex-direction: row;
   justify-content: space-around;
 }
+
 @media (max-width: 500px) {
-  .wrapper_about{
+  .wrapper_about {
     padding-top: 50px;
     height: 100%;
   }
 }
+
 .container_our_works .container_content {
   width: 100%;
   max-width: 565px;
@@ -1149,12 +1151,14 @@ main .wrapper .container .container_content .add_container {
   flex-direction: column;
   gap: 10px;
 }
+
 @media (max-width: 500px) {
-  .container_our_works .container_content{
+  .container_our_works .container_content {
     max-height: unset;
     height: 755px;
   }
 }
+
 .lists_block {
   display: flex;
   flex-direction: column;
@@ -1195,13 +1199,15 @@ main .wrapper .container .container_content .add_container {
   background-color: transparent;
   transition: background-color .2s linear;
 }
+
 @media (max-width: 500px) {
-  .container_our_works .container_content .lists_block .list{
+  .container_our_works .container_content .lists_block .list {
     flex-direction: column;
     gap: 20px;
     background-color: #93939314;
   }
 }
+
 .container_our_works .container_content .lists_block .list .content {
   display: flex;
   flex-direction: column;
@@ -1276,26 +1282,30 @@ main .wrapper .container .container_content .add_container {
 .projects_block .list:hover {
   background-color: #93939314;
 }
+
 @media (max-width: 500px) {
-  .projects_block .list{
+  .projects_block .list {
     background-color: #93939314;
     flex-direction: column;
     gap: 20px;
     height: 275px;
   }
 }
+
 .projects_block .list img {
   width: 368px;
   height: 190px;
   position: unset;
 }
+
 @media (max-width: 500px) {
-  .projects_block .list img{
+  .projects_block .list img {
     display: block;
     width: 100%;
     height: 180px;
   }
 }
+
 .projects_block .list h2 {
   font-size: 18px;
   --tw-text-opacity: 1;
