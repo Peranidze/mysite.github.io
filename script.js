@@ -143,60 +143,6 @@ var topText = function (target) {
     return height
 }
 const height_history = topText(text_about)
-// var bottomText = function (target) {
-//     var targetPosition = {
-//         top: window.scrollY + target.getBoundingClientRect().top,
-//         bottom: window.scrollY + target.getBoundingClientRect().bottom
-//     }
-//     let height = targetPosition.bottom - 700;
-//     return height
-// }
-
-// var Visible_text = function (target) {
-//     // Все позиции элемента
-//     var targetPosition = {
-//         top: window.scrollY + target.getBoundingClientRect().top,
-//         left: window.scrollX + target.getBoundingClientRect().left,
-//         right: window.scrollX + target.getBoundingClientRect().right,
-//         bottom: window.scrollY + target.getBoundingClientRect().bottom
-//     },
-//         // Получаем позиции окна
-//         windowPosition = {
-//             top: window.scrollY,
-//             left: window.scrollX,
-//             right: window.scrollX + document.documentElement.clientWidth,
-//             bottom: window.scrollY + document.documentElement.clientHeight
-//         };
-//     if (document.documentElement.clientWidth > 768) {
-//         if (targetPosition.top >= 2004.7777252197266) {
-//             choice_block_line_one.classList.add('line_active');
-//             choice_block_text_one.classList.add('text_active');
-//         } else {
-//             // Если элемент не видно, то запускаем этот код
-//             choice_block_line_one.classList.remove('line_active');
-//             choice_block_text_one.classList.remove('text_active');
-//         };
-//     }
-//     if (document.documentElement.clientWidth < 768) {
-//         if (targetPosition.top >= height_history) {
-//             choice_block_line_one.classList.add('line_active');
-//             choice_block_text_one.classList.add('text_active');
-//         }
-//         if (targetPosition.top <= height_history) {
-//             // Если элемент не видно, то запускаем этот код
-//             choice_block_line_one.classList.remove('line_active');
-//             choice_block_text_one.classList.remove('text_active');
-//         };
-
-//     }
-
-// };
-// Visible_text(text_about);
-// var scroll_content = document.querySelector('.container_our_works .container_content ');
-// // Запускаем функцию при прокрутке страницы
-// scroll_content.addEventListener('scroll', function () {
-//     Visible_text(text_about);
-// });
 
 // var Visible_knowledge = function (target) {
 //     // Все позиции элемента
@@ -281,24 +227,13 @@ for (let anchor of anchors) {
 
 
 
-// Получаем нужный элемент
-var element = document.querySelector('#text_about');
+
 let container_content = document.querySelector('.container_our_works .container_content')
-var Visible = function (target) {
-    // Все позиции элемента
+var Visible_text = function (target) {
     var targetPosition = {
         top: window.scrollY + target.getBoundingClientRect().top,
-        left: window.scrollX + target.getBoundingClientRect().left,
-        right: window.scrollX + target.getBoundingClientRect().right,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
-    },
-        // Получаем позиции окна
-        windowPosition = {
-            top: window.scrollY,
-            left: window.scrollX,
-            right: window.scrollX + document.documentElement.clientWidth,
-            bottom: window.scrollY + document.documentElement.clientHeight
-        };
+    }
     if (targetPosition.top <= height_history &&
         targetPosition.bottom > height_history) {
         choice_block_line_one.classList.add('line_active');
@@ -307,12 +242,15 @@ var Visible = function (target) {
         choice_block_line_one.classList.remove('line_active');
         choice_block_text_one.classList.remove('text_active');
     };
+    if(choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')){
+        choice_block_line_two.classList.remove('line_active');
+        choice_block_text_two.classList.remove('text_active');
+    }else{
+        choice_block_line_two.classList.add('line_active');
+        choice_block_text_two.classList.add('text_active');
+    }
 };
-
-// Запускаем функцию при прокрутке страницы
 container_content.addEventListener('scroll', function () {
-    Visible(element);
+    Visible_text(text_about);
 });
-
-// А также запустим функцию сразу. А то вдруг, элемент изначально видно
-Visible(element);
+Visible_text(text_about);
