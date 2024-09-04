@@ -149,14 +149,29 @@ var Visible_text = function (target) {
             right: window.scrollX + document.documentElement.clientWidth,
             bottom: window.scrollY + document.documentElement.clientHeight
         };
-    if (targetPosition.top >= 2004.7777252197266) {
-        choice_block_line_one.classList.add('line_active');
-        choice_block_text_one.classList.add('text_active');
-    } else {
-        // Если элемент не видно, то запускаем этот код
-        choice_block_line_one.classList.remove('line_active');
-        choice_block_text_one.classList.remove('text_active');
-    };
+    console.log(targetPosition.top)
+    if (document.documentElement.clientWidth > 768) {
+        if (targetPosition.top >= 2004.7777252197266) {
+            choice_block_line_one.classList.add('line_active');
+            choice_block_text_one.classList.add('text_active');
+        } else {
+            // Если элемент не видно, то запускаем этот код
+            choice_block_line_one.classList.remove('line_active');
+            choice_block_text_one.classList.remove('text_active');
+        };
+    }
+    if (document.documentElement.clientWidth < 768) {
+        if (targetPosition.top >= 3188.999954223633) {
+            choice_block_line_one.classList.add('line_active');
+            choice_block_text_one.classList.add('text_active');
+        } else {
+            // Если элемент не видно, то запускаем этот код
+            choice_block_line_one.classList.remove('line_active');
+            choice_block_text_one.classList.remove('text_active');
+        };
+
+    }
+
 };
 Visible_text(text_about);
 var scroll_content = document.querySelector('.container_our_works .container_content ');
@@ -180,14 +195,14 @@ var Visible_knowledge = function (target) {
             right: window.scrollX + document.documentElement.clientWidth,
             bottom: window.scrollY + document.documentElement.clientHeight
         };
-    if (targetPosition.top <= 2516.8888244628906 ) {
+    if (targetPosition.top <= 2516.8888244628906) {
         choice_block_line_two.classList.add('line_active');
         choice_block_text_two.classList.add('text_active');
-    }else{
+    } else {
         choice_block_line_two.classList.remove('line_active');
         choice_block_text_two.classList.remove('text_active');
     }
-    if(targetPosition.bottom <= 2421.0554809570312){
+    if (targetPosition.bottom <= 2421.0554809570312) {
         choice_block_line_two.classList.remove('line_active');
         choice_block_text_two.classList.remove('text_active');
     }
@@ -214,7 +229,6 @@ var Visible_projects = function (target) {
             right: window.scrollX + document.documentElement.clientWidth,
             bottom: window.scrollY + document.documentElement.clientHeight
         };
-        console.log(targetPosition.top)
     if (targetPosition.top <= 2424.833282470703) {
         choice_block_line_three.classList.add('line_active');
         choice_block_text_three.classList.add('text_active');
@@ -234,14 +248,14 @@ scroll_content.addEventListener('scroll', function () {
 const anchors = document.querySelectorAll('a[href*="#"]')
 
 for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
-    
-    const blockID = anchor.getAttribute('href').substr(1)
-    
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const blockID = anchor.getAttribute('href').substr(1)
+
+        document.getElementById(blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
     })
-  })
 }

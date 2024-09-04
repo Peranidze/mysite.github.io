@@ -1012,6 +1012,7 @@ main .wrapper .container .container_content .add_container {
 @media (max-width: 500px) {
   .container_our_works {
     flex-direction: column;
+    height: 860px;
   }
 }
 
@@ -1135,7 +1136,7 @@ main .wrapper .container .container_content .add_container {
 @media (max-width: 500px) {
   .wrapper_about{
     padding-top: 50px;
-    height: 100vh;
+    height: 100%;
   }
 }
 .container_our_works .container_content {
