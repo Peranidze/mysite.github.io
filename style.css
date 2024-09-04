@@ -1185,7 +1185,13 @@ main .wrapper .container .container_content .add_container {
   background-color: transparent;
   transition: background-color .2s linear;
 }
-
+@media (max-width: 500px) {
+  .container_our_works .container_content .lists_block .list{
+    flex-direction: column;
+    gap: 20px;
+    background-color: #93939314;
+  }
+}
 .container_our_works .container_content .lists_block .list .content {
   display: flex;
   flex-direction: column;
@@ -1259,13 +1265,24 @@ main .wrapper .container .container_content .add_container {
 .projects_block .list:hover {
   background-color: #93939314;
 }
-
+@media (max-width: 500px) {
+  .projects_block .list{
+    background-color: #93939314;
+    flex-direction: column;
+    gap: 20px;
+    height: 275px;
+  }
+}
 .projects_block .list img {
   width: 368px;
   height: 190px;
   position: unset;
 }
-
+@media (max-width: 500px) {
+  .projects_block .list img{
+    display: block;
+  }
+}
 .projects_block .list h2 {
   font-size: 18px;
   --tw-text-opacity: 1;
