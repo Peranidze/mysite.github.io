@@ -133,18 +133,23 @@ choice_block_three.addEventListener('click', () => {
 const text_about = document.querySelector('.container_our_works .container_content p');
 const knowledge_block = document.querySelector('.container_our_works .container_content .lists_block');
 const projects_block = document.querySelector('.container_our_works .container_content .projects_block');
-var heightText = function (target) {
+var topText = function (target) {
     var targetPosition = {
         top: window.scrollY + target.getBoundingClientRect().top,
-        left: window.scrollX + target.getBoundingClientRect().left,
-        right: window.scrollX + target.getBoundingClientRect().right,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
-    let height = targetPosition.top - 700;
+    let height = targetPosition.top - 600;
     return height
 }
-const height = heightText(text_about)
-
+const height_history = topText(text_about)
+// var bottomText = function (target) {
+//     var targetPosition = {
+//         top: window.scrollY + target.getBoundingClientRect().top,
+//         bottom: window.scrollY + target.getBoundingClientRect().bottom
+//     }
+//     let height = targetPosition.bottom - 700;
+//     return height
+// }
 
 var Visible_text = function (target) {
     // Все позиции элемента
@@ -172,12 +177,11 @@ var Visible_text = function (target) {
         };
     }
     if (document.documentElement.clientWidth < 768) {
-        if (targetPosition.top >= height) {
+        if (targetPosition.top >= height_history) {
             choice_block_line_one.classList.add('line_active');
             choice_block_text_one.classList.add('text_active');
         }
-        if (targetPosition.top <= height) {
-            console.log('прошел')
+        if (targetPosition.top <= height_history) {
             // Если элемент не видно, то запускаем этот код
             choice_block_line_one.classList.remove('line_active');
             choice_block_text_one.classList.remove('text_active');
