@@ -134,83 +134,8 @@ choice_block_three.addEventListener('click', () => {
 const text_about = document.querySelector('.container_our_works .container_content p');
 const knowledge_block = document.querySelector('.container_our_works .container_content .lists_block');
 const projects_block = document.querySelector('.container_our_works .container_content .projects_block');
-var topText = function (target) {
-    var targetPosition = {
-        top: window.scrollY + target.getBoundingClientRect().top,
-        bottom: window.scrollY + target.getBoundingClientRect().bottom
-    }
-    let height = targetPosition.top;
-    return height
-}
-const height_history = topText(text_about)
-
-// var Visible_knowledge = function (target) {
-//     // Все позиции элемента
-//     var targetPosition = {
-//         top: window.scrollY + target.getBoundingClientRect().top,
-//         left: window.scrollX + target.getBoundingClientRect().left,
-//         right: window.scrollX + target.getBoundingClientRect().right,
-//         bottom: window.scrollY + target.getBoundingClientRect().bottom
-//     },
-//         // Получаем позиции окна
-//         windowPosition = {
-//             top: window.scrollY,
-//             left: window.scrollX,
-//             right: window.scrollX + document.documentElement.clientWidth,
-//             bottom: window.scrollY + document.documentElement.clientHeight
-//         };
-//     if (targetPosition.top <= 2516.8888244628906) {
-//         choice_block_line_two.classList.add('line_active');
-//         choice_block_text_two.classList.add('text_active');
-//     } else {
-//         choice_block_line_two.classList.remove('line_active');
-//         choice_block_text_two.classList.remove('text_active');
-//     }
-//     if (targetPosition.bottom <= 2421.0554809570312) {
-//         choice_block_line_two.classList.remove('line_active');
-//         choice_block_text_two.classList.remove('text_active');
-//     }
-// };
-// Visible_knowledge(knowledge_block);
-
-// // Запускаем функцию при прокрутке страницы
-// scroll_content.addEventListener('scroll', function () {
-//     Visible_knowledge(knowledge_block);
-// });
-
-// var Visible_projects = function (target) {
-//     // Все позиции элемента
-//     var targetPosition = {
-//         top: window.scrollY + target.getBoundingClientRect().top,
-//         left: window.scrollX + target.getBoundingClientRect().left,
-//         right: window.scrollX + target.getBoundingClientRect().right,
-//         bottom: window.scrollY + target.getBoundingClientRect().bottom
-//     },
-//         // Получаем позиции окна
-//         windowPosition = {
-//             top: window.scrollY,
-//             left: window.scrollX,
-//             right: window.scrollX + document.documentElement.clientWidth,
-//             bottom: window.scrollY + document.documentElement.clientHeight
-//         };
-//     if (targetPosition.top <= 2424.833282470703) {
-//         choice_block_line_three.classList.add('line_active');
-//         choice_block_text_three.classList.add('text_active');
-//     } else {
-//         // Если элемент не видно, то запускаем этот код
-//         choice_block_line_three.classList.remove('line_active');
-//         choice_block_text_three.classList.remove('text_active');
-//     };
-// };
-// Visible_projects(projects_block);
-
-// // Запускаем функцию при прокрутке страницы
-// scroll_content.addEventListener('scroll', function () {
-//     Visible_projects(projects_block);
-// });
 
 const anchors = document.querySelectorAll('a[href*="#"]')
-
 for (let anchor of anchors) {
     anchor.addEventListener('click', function (e) {
         e.preventDefault()
@@ -223,18 +148,22 @@ for (let anchor of anchors) {
         })
     })
 }
-
-
-
-let height_two;
-
+var topText = function (target) {
+    var targetPosition = {
+        top: window.scrollY + target.getBoundingClientRect().top,
+        bottom: window.scrollY + target.getBoundingClientRect().bottom
+    }
+    let height = targetPosition.top;
+    return height
+}
+const height_history = topText(text_about)
 let container_content = document.querySelector('.container_our_works .container_content')
 var Visible_text = function (target) {
     var targetPosition = {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
-    console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
+    // console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
     if(Math.round(targetPosition.top) >= Math.round(height_history)){
         choice_block_line_one.classList.add('line_active');
         choice_block_text_one.classList.add('text_active');
@@ -262,3 +191,51 @@ container_content.addEventListener('scroll', function () {
     Visible_text(text_about);
 });
 Visible_text(text_about);
+let lists_block = document.querySelector('.container_our_works .lists_block');
+var bottomText = function (target) {
+    var targetPosition = {
+        top: window.scrollY + target.getBoundingClientRect().top,
+        bottom: window.scrollY + target.getBoundingClientRect().bottom
+    }
+    let height = targetPosition.bottom;
+    return height
+}
+const height_list = bottomText(lists_block)
+console.log(height_list, height_history)
+
+
+
+var Visible_text = function (target) {
+    var targetPosition = {
+        top: window.scrollY + target.getBoundingClientRect().top,
+        bottom: window.scrollY + target.getBoundingClientRect().bottom
+    }
+    // console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
+    if(Math.round(targetPosition.top) >= Math.round(height_history)){
+        choice_block_line_one.classList.add('line_active');
+        choice_block_text_one.classList.add('text_active');
+        return false
+    }else{
+        if (Math.round(targetPosition.top) <= Math.round(height_history) &&
+        Math.round(targetPosition.bottom) > Math.round(height_history)) {
+            choice_block_line_one.classList.add('line_active');
+            choice_block_text_one.classList.add('text_active');
+        } else {
+            choice_block_line_one.classList.remove('line_active');
+            choice_block_text_one.classList.remove('text_active');
+        };
+    }
+    
+    if (choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')) {
+        choice_block_line_two.classList.remove('line_active');
+        choice_block_text_two.classList.remove('text_active');
+    } else {
+        choice_block_line_two.classList.add('line_active');
+        choice_block_text_two.classList.add('text_active');
+    }
+};
+
+lists_block.addEventListener('scroll', function () {
+    Visible_text(lists_block);
+});
+Visible_text(lists_block);

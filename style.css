@@ -1228,7 +1228,7 @@ main .wrapper .container .container_content .add_container {
 
 .container_our_works .container_content .lists_block .list .content p {
   font-size: 15px;
-  padding-bottom: unset;
+  margin-bottom: unset;
 }
 
 .container_our_works .container_content .lists_block .list .content .info {
