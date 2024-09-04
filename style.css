@@ -1144,7 +1144,12 @@ main .wrapper .container .container_content .add_container {
   flex-direction: column;
   gap: 10px;
 }
-
+@media (max-width: 500px) {
+  .container_our_works .container_content{
+    max-height: unset;
+    height: 750px;
+  }
+}
 .lists_block {
   display: flex;
   flex-direction: column;
