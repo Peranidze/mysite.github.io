@@ -138,7 +138,7 @@ var topText = function (target) {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
-    let height = targetPosition.top - 600;
+    let height = targetPosition.top - 630;
     return height
 }
 const height_history = topText(text_about)
