@@ -163,7 +163,7 @@ var Visible_text = function (target) {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
-    // console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
+    console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
     if(Math.round(targetPosition.top) >= Math.round(height_history)){
         choice_block_line_one.classList.add('line_active');
         choice_block_text_one.classList.add('text_active');
@@ -205,37 +205,37 @@ let lists_block = document.querySelector('.container_our_works .lists_block');
 
 
 
-var Visible_text = function (target) {
-    var targetPosition = {
-        top: window.scrollY + target.getBoundingClientRect().top,
-        bottom: window.scrollY + target.getBoundingClientRect().bottom
-    }
-    console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
-    if(Math.round(targetPosition.top) >= Math.round(height_history)){
-        choice_block_line_one.classList.add('line_active');
-        choice_block_text_one.classList.add('text_active');
-        return false
-    }else{
-        if (Math.round(targetPosition.top) <= Math.round(height_history) &&
-        Math.round(targetPosition.bottom) > Math.round(height_history)) {
-            choice_block_line_one.classList.add('line_active');
-            choice_block_text_one.classList.add('text_active');
-        } else {
-            choice_block_line_one.classList.remove('line_active');
-            choice_block_text_one.classList.remove('text_active');
-        };
-    }
+// var Visible_text = function (target) {
+//     var targetPosition = {
+//         top: window.scrollY + target.getBoundingClientRect().top,
+//         bottom: window.scrollY + target.getBoundingClientRect().bottom
+//     }
+//     console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
+//     if(Math.round(targetPosition.top) >= Math.round(height_history)){
+//         choice_block_line_one.classList.add('line_active');
+//         choice_block_text_one.classList.add('text_active');
+//         return false
+//     }else{
+//         if (Math.round(targetPosition.top) <= Math.round(height_history) &&
+//         Math.round(targetPosition.bottom) > Math.round(height_history)) {
+//             choice_block_line_one.classList.add('line_active');
+//             choice_block_text_one.classList.add('text_active');
+//         } else {
+//             choice_block_line_one.classList.remove('line_active');
+//             choice_block_text_one.classList.remove('text_active');
+//         };
+//     }
     
-    if (choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')) {
-        choice_block_line_two.classList.remove('line_active');
-        choice_block_text_two.classList.remove('text_active');
-    } else {
-        choice_block_line_two.classList.add('line_active');
-        choice_block_text_two.classList.add('text_active');
-    }
-};
+//     if (choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')) {
+//         choice_block_line_two.classList.remove('line_active');
+//         choice_block_text_two.classList.remove('text_active');
+//     } else {
+//         choice_block_line_two.classList.add('line_active');
+//         choice_block_text_two.classList.add('text_active');
+//     }
+// };
 
-lists_block.addEventListener('scroll', function () {
-    Visible_text(lists_block);
-});
-Visible_text(lists_block);
+// lists_block.addEventListener('scroll', function () {
+//     Visible_text(lists_block);
+// });
+// Visible_text(lists_block);
