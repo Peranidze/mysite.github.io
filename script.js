@@ -137,7 +137,7 @@ var bottomText = function (target) {
     let height = targetPosition.bottom;
     return height
 }
-const check_point_kn = Math.round(height_history - height_text - height_knowledge - 161)
+const check_point_kn = Math.round(height_history - height_text - height_knowledge - 155)
 const check_point_h = Math.round(height_history - height_text - 50);
 
 
