@@ -192,16 +192,16 @@ container_content.addEventListener('scroll', function () {
 });
 Visible_text(text_about);
 let lists_block = document.querySelector('.container_our_works .lists_block');
-var bottomText = function (target) {
-    var targetPosition = {
-        top: window.scrollY + target.getBoundingClientRect().top,
-        bottom: window.scrollY + target.getBoundingClientRect().bottom
-    }
-    let height = targetPosition.bottom;
-    return height
-}
-const height_list = bottomText(lists_block)
-console.log(height_list, height_history)
+// var bottomText = function (target) {
+//     var targetPosition = {
+//         top: window.scrollY + target.getBoundingClientRect().top,
+//         bottom: window.scrollY + target.getBoundingClientRect().bottom
+//     }
+//     let height = targetPosition.bottom;
+//     return height
+// }
+// const height_list = bottomText(lists_block)
+// console.log(height_list, height_history)
 
 
 
