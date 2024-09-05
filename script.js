@@ -1,30 +1,3 @@
-// SmoothScroll({
-//     // Время скролла 400 = 0.4 секунды
-//     animationTime: 800,
-//     // Размер шага в пикселях 
-//     stepSize: 75,
-
-//     // Дополнительные настройки:
-
-//     // Ускорение 
-//     accelerationDelta: 30,
-//     // Максимальное ускорение
-//     accelerationMax: 2,
-
-//     // Поддержка клавиатуры
-//     keyboardSupport: true,
-//     // Шаг скролла стрелками на клавиатуре в пикселях
-//     arrowScroll: 50,
-
-//     // Pulse (less tweakable)
-//     // ratio of "tail" to "acceleration"
-//     pulseAlgorithm: true,
-//     pulseScale: 4,
-//     pulseNormalize: 1,
-
-//     // Поддержка тачпада
-//     touchpadSupport: true,
-// })
 
 // const button_menu = document.querySelector('#menu-btn')
 const menu = document.querySelector('.header_container_nav');
@@ -70,14 +43,6 @@ const main = document.querySelector('main')
 // const data_block = document.querySelector('.now_data');
 // data_block.innerHTML = '';
 // data_block.innerHTML = now_day + ' ' + now_month + 'а';
-console.log('Да')
-// const wrapper_about = document.querySelector('.wrapper_about');
-
-// wrapper_about.addEventListener('mousemove', e => {
-//     const x = e.clientX;
-//     const y = e.clientY;
-//     wrapper_about.style.background = `radial-gradient(circle at ${x}px ${y}px, rgb(66 65 65), #0f172a)`;
-// });
 const choice_block_one = document.querySelector('#first_block');
 
 
@@ -130,10 +95,13 @@ choice_block_three.addEventListener('click', () => {
 
 
 
-// Получаем нужный элемент
 const text_about = document.querySelector('.container_our_works .container_content p');
 const knowledge_block = document.querySelector('.container_our_works .container_content .lists_block');
 const projects_block = document.querySelector('.container_our_works .container_content .projects_block');
+const height_text = text_about.clientHeight;
+const height_knowledge = knowledge_block.clientHeight;
+const height_projects = projects_block.clientHeight;
+
 
 const anchors = document.querySelectorAll('a[href*="#"]')
 for (let anchor of anchors) {
@@ -158,19 +126,36 @@ var topText = function (target) {
 }
 const height_history = topText(text_about)
 let container_content = document.querySelector('.container_our_works .container_content')
+
+
+
+var bottomText = function (target) {
+    var targetPosition = {
+        top: window.scrollY + target.getBoundingClientRect().top,
+        bottom: window.scrollY + target.getBoundingClientRect().bottom
+    }
+    let height = targetPosition.bottom;
+    return height
+}
+const check_point_kn = Math.round(height_history - height_text - height_knowledge - 161)
+const check_point_h = Math.round(height_history - height_text - 50);
+
+
+
+
+
 var Visible_text = function (target) {
     var targetPosition = {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
-    console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
-    if(Math.round(targetPosition.top) >= Math.round(height_history)){
+    if (Math.round(targetPosition.top) >= Math.round(height_history)) {
         choice_block_line_one.classList.add('line_active');
         choice_block_text_one.classList.add('text_active');
         return false
-    }else{
+    } else {
         if (Math.round(targetPosition.top) <= Math.round(height_history) &&
-        Math.round(targetPosition.bottom) > Math.round(height_history)) {
+            Math.round(targetPosition.bottom) > Math.round(height_history)) {
             choice_block_line_one.classList.add('line_active');
             choice_block_text_one.classList.add('text_active');
         } else {
@@ -178,7 +163,6 @@ var Visible_text = function (target) {
             choice_block_text_one.classList.remove('text_active');
         };
     }
-    
     if (choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')) {
         choice_block_line_two.classList.remove('line_active');
         choice_block_text_two.classList.remove('text_active');
@@ -186,56 +170,26 @@ var Visible_text = function (target) {
         choice_block_line_two.classList.add('line_active');
         choice_block_text_two.classList.add('text_active');
     }
+    if (targetPosition.top <= check_point_h) {
+        if (targetPosition.top >= check_point_kn) {
+            choice_block_line_two.classList.add('line_active');
+            choice_block_text_two.classList.add('text_active');
+        } else {
+            choice_block_line_two.classList.remove('line_active');
+            choice_block_text_two.classList.remove('text_active');
+        }
+
+        if (choice_block_line_two.classList.contains('line_active') && choice_block_text_two.classList.contains('text_active')) {
+            choice_block_line_three.classList.remove('line_active');
+            choice_block_text_three.classList.remove('text_active');
+        } else {
+            choice_block_line_three.classList.add('line_active');
+            choice_block_text_three.classList.add('text_active');
+        }
+    }
+
 };
 container_content.addEventListener('scroll', function () {
     Visible_text(text_about);
 });
 Visible_text(text_about);
-let lists_block = document.querySelector('.container_our_works .lists_block');
-// var bottomText = function (target) {
-//     var targetPosition = {
-//         top: window.scrollY + target.getBoundingClientRect().top,
-//         bottom: window.scrollY + target.getBoundingClientRect().bottom
-//     }
-//     let height = targetPosition.bottom;
-//     return height
-// }
-// const height_list = bottomText(lists_block)
-// console.log(height_list, height_history)
-
-
-
-// var Visible_text = function (target) {
-//     var targetPosition = {
-//         top: window.scrollY + target.getBoundingClientRect().top,
-//         bottom: window.scrollY + target.getBoundingClientRect().bottom
-//     }
-//     console.log("Элемен :", Math.round(targetPosition.top), "Блок:", Math.round(height_history))
-//     if(Math.round(targetPosition.top) >= Math.round(height_history)){
-//         choice_block_line_one.classList.add('line_active');
-//         choice_block_text_one.classList.add('text_active');
-//         return false
-//     }else{
-//         if (Math.round(targetPosition.top) <= Math.round(height_history) &&
-//         Math.round(targetPosition.bottom) > Math.round(height_history)) {
-//             choice_block_line_one.classList.add('line_active');
-//             choice_block_text_one.classList.add('text_active');
-//         } else {
-//             choice_block_line_one.classList.remove('line_active');
-//             choice_block_text_one.classList.remove('text_active');
-//         };
-//     }
-    
-//     if (choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')) {
-//         choice_block_line_two.classList.remove('line_active');
-//         choice_block_text_two.classList.remove('text_active');
-//     } else {
-//         choice_block_line_two.classList.add('line_active');
-//         choice_block_text_two.classList.add('text_active');
-//     }
-// };
-
-// lists_block.addEventListener('scroll', function () {
-//     Visible_text(lists_block);
-// });
-// Visible_text(lists_block);
