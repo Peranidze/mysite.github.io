@@ -198,24 +198,15 @@ var Visible_text = function (target) {
             choice_block_line_two.classList.remove('line_active');
             choice_block_text_two.classList.remove('text_active');
         }
-
-        if (choice_block_line_two.classList.contains('line_active') && choice_block_text_two.classList.contains('text_active')) {
-            choice_block_line_three.classList.remove('line_active');
-            choice_block_text_three.classList.remove('text_active');
-        } else {
-            choice_block_line_three.classList.add('line_active');
-            choice_block_text_three.classList.add('text_active');
-        }
-
-        if (choice_block_line_two.classList.contains('line_active') && choice_block_text_two.classList.contains('text_active')) {
-            choice_block_line_three.classList.remove('line_active');
-            choice_block_text_three.classList.remove('text_active');
-        } else {
-            choice_block_line_three.classList.add('line_active');
-            choice_block_text_three.classList.add('text_active');
-        }
     }
 
+    if (choice_block_line_two.classList.contains('line_active') && choice_block_text_two.classList.contains('text_active') || choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')) {
+        choice_block_line_three.classList.remove('line_active');
+        choice_block_text_three.classList.remove('text_active');
+    } else {
+        choice_block_line_three.classList.add('line_active');
+        choice_block_text_three.classList.add('text_active');
+    }
 
 
 };
