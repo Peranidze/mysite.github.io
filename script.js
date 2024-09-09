@@ -73,6 +73,13 @@ choice_block_one.addEventListener('click', () => {
     choice_block_text_three.classList.remove('text_active');
 })
 
+if(choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')){
+    choice_block_line_two.classList.remove('line_active');
+    choice_block_text_two.classList.remove('text_active');
+    choice_block_line_three.classList.remove('line_active');
+    choice_block_text_three.classList.remove('text_active');
+} 
+
 choice_block_two.addEventListener('click', () => {
     choice_block_line_two.classList.add('line_active');
     choice_block_text_two.classList.add('text_active');
@@ -82,6 +89,13 @@ choice_block_two.addEventListener('click', () => {
     choice_block_line_three.classList.remove('line_active');
     choice_block_text_three.classList.remove('text_active');
 })
+
+if(choice_block_two.classList.contains('line_active') && choice_block_two.classList.contains('text_active')){
+    choice_block_text_three.classList.remove('line_active');
+    choice_block_text_three.classList.remove('text_active');
+    choice_block_line_one.classList.remove('line_active');
+    choice_block_text_one.classList.remove('text_active');
+} 
 
 choice_block_three.addEventListener('click', () => {
     choice_block_line_three.classList.add('line_active');
@@ -93,7 +107,12 @@ choice_block_three.addEventListener('click', () => {
     choice_block_text_one.classList.remove('text_active');
 })
 
-
+if(choice_block_line_three.classList.contains('line_active') && choice_block_text_three.classList.contains('text_active')){
+    choice_block_line_two.classList.remove('line_active');
+    choice_block_text_two.classList.remove('text_active');
+    choice_block_line_one.classList.remove('line_active');
+    choice_block_text_one.classList.remove('text_active');
+} 
 
 const text_about = document.querySelector('.container_our_works .container_content p');
 const knowledge_block = document.querySelector('.container_our_works .container_content .lists_block');
@@ -149,6 +168,7 @@ var Visible_text = function (target) {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
+    console.log(targetPosition.top, height_history)
     if (Math.round(targetPosition.top) >= Math.round(height_history)) {
         choice_block_line_one.classList.add('line_active');
         choice_block_text_one.classList.add('text_active');
@@ -187,14 +207,6 @@ var Visible_text = function (target) {
             choice_block_text_three.classList.add('text_active');
         }
     }
-    if (choice_block_line_two.classList.contains('line_active') && choice_block_text_two.classList.contains('text_active')) {
-        choice_block_line_three.classList.remove('line_active');
-        choice_block_text_three.classList.remove('text_active');
-    } else {
-        choice_block_line_three.classList.add('line_active');
-        choice_block_text_three.classList.add('text_active');
-    }
-
 };
 container_content.addEventListener('scroll', function () {
     Visible_text(text_about);
