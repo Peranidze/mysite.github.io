@@ -168,8 +168,8 @@ var Visible_text = function (target) {
         top: window.scrollY + target.getBoundingClientRect().top,
         bottom: window.scrollY + target.getBoundingClientRect().bottom
     }
-    console.log(targetPosition.top, height_history)
-    if (Math.round(targetPosition.top) >= Math.round(height_history)) {
+    console.log(targetPosition.top, check_point_h)
+    if (Math.round(targetPosition.top) >= Math.round(check_point_h)) {
         choice_block_line_one.classList.add('line_active');
         choice_block_text_one.classList.add('text_active');
         return false
