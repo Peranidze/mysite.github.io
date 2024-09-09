@@ -1095,15 +1095,16 @@ main .wrapper .container .container_content .add_container {
   transition: all 0.2s linear;
 }
 
-.container_our_works .container_nav nav .block a {
+.container_our_works .container_nav nav .block h2 {
   font-size: 14px;
   text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
   transition: color 0.2s linear;
+  font-weight: 300;
 }
 
-.container_our_works .container_nav nav .block:hover>a {
+.container_our_works .container_nav nav .block:hover>h2 {
   --tw-text-opacity: 1;
   color: rgb(226 232 240 / var(--tw-text-opacity));
 }
