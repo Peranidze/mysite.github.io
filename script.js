@@ -1,3 +1,11 @@
+const menu_btn = document.querySelector('.burger');
+const header_block = document.querySelector('.header_block');
+menu_btn.addEventListener('click', ()=>{
+    header_block.classList.toggle('activatior_header')
+})
+
+
+
 
 // const button_menu = document.querySelector('#menu-btn')
 const menu = document.querySelector('.header_container_nav');
@@ -7,33 +15,6 @@ const line = document.querySelector('.line');
 const gif = document.querySelector('.gif');
 const main = document.querySelector('main')
 
-// button_menu.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     if (button_menu.classList.contains('open')) {
-//         button_menu.classList.remove('open');
-//         button_menu.classList.add('close');
-//     } else {
-//         button_menu.classList.remove('close');
-//         button_menu.classList.add('open');
-//     }
-//     menu.classList.toggle('activator_menu')
-//     setTimeout(containerLeftActive, 450);
-//     setTimeout(containerRightActive, 850);
-//     setTimeout(gifActive, 400)
-//     line.classList.toggle('activator_line')
-//     main.classList.toggle('activator_main')
-// });
-
-// function containerLeftActive() {
-//     contant_left.classList.toggle('activator_navblock');
-//     console.log('Да')
-// }
-// function containerRightActive() {
-//     contant_right.classList.toggle('activator_navblock');
-// }
-// function gifActive() {
-//     gif.classList.toggle('activator_gif')
-// }
 
 
 // const date = new Date();
