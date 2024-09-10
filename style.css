@@ -1043,7 +1043,7 @@ main .wrapper .container .container_content .add_container {
 
 @media (max-width: 500px) {
   .wrapper_quality {
-    padding-top: 50px;
+    padding-top: 90px;
     padding-left: 16px;
     padding-right: 16px;
   }
