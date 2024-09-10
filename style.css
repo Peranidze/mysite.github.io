@@ -1440,6 +1440,8 @@ main .wrapper .container .container_content .add_container {
   font-weight: 200;
   border-radius: 15px;
   color: rgb(163, 162, 162);
+  width: 100%;
+  max-width: 650px;
 }
 
 .block_quality .block_content p span,
