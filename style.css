@@ -47,11 +47,13 @@ header {
   flex-wrap: wrap;
   z-index: 15;
 }
+
 @media (max-width: 500px) {
-  header{
+  header {
     height: 60px;
   }
 }
+
 .header_container {
   width: 100%;
   max-width: 1400px;
@@ -69,11 +71,13 @@ header {
   color: white;
   font-size: 35px;
 }
-@media (max-width: 500px){
-  .header_container a{
+
+@media (max-width: 500px) {
+  .header_container a {
     font-size: 25px;
   }
 }
+
 /* burger-menu */
 .burger-checkbox {
   position: absolute;
@@ -143,22 +147,26 @@ header {
   transition: .3s linear;
   box-shadow: 0px 11px 20px 0px rgba(255, 255, 255, 0.34);
 }
-.header_block .container_content{
+
+.header_block .container_content {
   display: none;
   width: 100%;
   max-width: 1400px;
   margin: 0px auto;
   justify-content: center;
 }
-.active{
+
+.active {
   display: flex !important;
 }
+
 @media (max-width: 500px) {
-  .header_block .container_content{
+  .header_block .container_content {
     justify-content: flex-start;
   }
 }
-.header_block .container_content ul{
+
+.header_block .container_content ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -166,19 +174,22 @@ header {
   flex-wrap: wrap;
   height: 100%;
 }
+
 @media (max-width: 500px) {
-  .header_block .container_content ul{
+  .header_block .container_content ul {
     flex-direction: column;
     justify-content: flex-start;
     gap: 25px;
   }
 }
-.header_block .container_content ul li a{
+
+.header_block .container_content ul li a {
   color: white;
   font-size: 16px;
   font-weight: 300;
   transition: all 0.2s linear;
 }
+
 .header_block .container_content ul li a :after {
   position: absolute;
   content: '';
@@ -189,8 +200,9 @@ header {
   background: #282c34;
   transition: .3s;
 }
+
 @media (max-width: 500px) {
-  .header_block .container_content ul li a :after{
+  .header_block .container_content ul li a :after {
     display: none;
   }
 }
@@ -206,6 +218,7 @@ header {
   background: white;
   transition: .3s;
 }
+
 .header_block .container_content ul li a :hover:after {
   width: 100%;
 }
@@ -213,19 +226,22 @@ header {
 
 .header_block .container_content ul li a:hover:after,
 .header_block .container_content ul li a:focus:after {
-	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+  width: 100%;
+  /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
 
 
 .activatior_header {
-  height: 110px!important;
+  height: 110px !important;
   opacity: 1 !important;
 }
+
 @media (max-width: 500px) {
-  .activatior_header{
+  .activatior_header {
     height: 42vh !important;
   }
 }
+
 main {
   width: 100%;
   /* max-width: calc(100vw - 80px); */
@@ -267,11 +283,13 @@ main .wrapper .container .container_content {
   padding-top: 100px;
   background-color: rgb(34 39 51);
 }
+
 @media (max-width: 500px) {
-  main .wrapper .container .container_content{
+  main .wrapper .container .container_content {
     padding-top: 60px;
   }
 }
+
 main .wrapper .container img {
   z-index: 0;
   width: 100%;
@@ -1105,6 +1123,7 @@ main .wrapper .container .container_content .add_container {
 @media (max-width: 500px) {
   .block_quality p {
     width: 100%;
+    font-size: 17px;
   }
 }
 
@@ -1152,11 +1171,27 @@ main .wrapper .container .container_content .add_container {
   max-width: 650px;
 }
 
+@media (max-width: 500px) {
+
+  .block_quality .block_content p,
+  .block_advantages .block_content p {
+    font-size: 17px;
+  }
+}
+
 .block_quality .block_content p span,
 .block_advantages .block_content p span {
   font-weight: 400;
   font-size: 23px;
   color: white;
+}
+
+@media (max-width: 500px) {
+
+  .block_quality .block_content p span,
+  .block_advantages .block_content p span {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1192,6 +1227,20 @@ main .wrapper .container .container_content .add_container {
   font-weight: 400;
   font-size: 23px;
   color: white;
+}
+
+@media (max-width: 500px) {
+
+  .back_call_block p{
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .back_call_block p span{
+    font-size: 20px;
+  }
 }
 
 .back_call_content {
