@@ -258,6 +258,11 @@ main .wrapper .container .container_content {
   padding-top: 100px;
   background-color: rgb(34 39 51);
 }
+@media (max-width: 500px) {
+  main .wrapper .container .container_content{
+    padding-top: 60px;
+  }
+}
 main .wrapper .container img {
   z-index: 0;
   width: 100%;
