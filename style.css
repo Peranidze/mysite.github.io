@@ -1384,6 +1384,10 @@ main .wrapper .container .container_content .add_container {
   width: 100%;
   max-width: 1400px;
   padding-top: 100px;
+
+}
+
+.block_advantages:last-child {
   padding-bottom: 100px;
 }
 
@@ -1392,6 +1396,9 @@ main .wrapper .container .container_content .add_container {
   .block_quality,
   .block_advantages {
     padding-top: 50px;
+  }
+
+  .block_advantages:last-child {
     padding-bottom: 50px;
   }
 }
@@ -1419,8 +1426,9 @@ main .wrapper .container .container_content .add_container {
 }
 
 @media (max-width: 500px) {
+
   .block_quality .block_content,
-  .block_advantages .block_content{
+  .block_advantages .block_content {
     gap: 15px;
   }
 }
@@ -1463,4 +1471,55 @@ main .wrapper .container .container_content .add_container {
   .block_advantages h2 {
     text-align: unset;
   }
+}
+
+.back_call_block {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.back_call_block p {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 200;
+  border-radius: 15px;
+  color: rgb(163, 162, 162);
+}
+
+.back_call_block p span {
+  font-weight: 400;
+  font-size: 23px;
+  color: white;
+}
+
+.back_call_content {
+  padding-top: 45px;
+  color: white !important;
+  padding-bottom: 20px;
+}
+
+.btn_back_call {
+  background-color: transparent;
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-radius: 15px;
+  color: white;
+  font-size: 18px;
+  border: 1px solid white;
+  transition: 0.3s linear;
+  transform: scale(1);
+  font-family: Raleway, sans-serif;
+}
+.btn_back_call:hover{
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
 }
