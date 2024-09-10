@@ -1,7 +1,9 @@
 const menu_btn = document.querySelector('.burger');
+const header_container_content = document.querySelector('.header_block .container_content');
 const header_block = document.querySelector('.header_block');
 menu_btn.addEventListener('click', ()=>{
-    header_block.classList.toggle('activatior_header')
+    header_block.classList.toggle('activatior_header');
+    header_container_content.classList.toggle('active')
 })
 
 
