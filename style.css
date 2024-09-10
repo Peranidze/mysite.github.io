@@ -1555,6 +1555,7 @@ main .wrapper .container .container_content .add_container {
     flex-direction: row;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 10px;
   }
 }
 .widjet a{
