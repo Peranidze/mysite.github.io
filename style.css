@@ -1388,8 +1388,9 @@ main .wrapper .container .container_content .add_container {
 }
 
 @media (max-width: 500px) {
+
   .block_quality,
-  .block_advantages{
+  .block_advantages {
     padding-top: 50px;
     padding-bottom: 50px;
   }
@@ -1417,6 +1418,13 @@ main .wrapper .container .container_content .add_container {
   gap: 45px;
 }
 
+@media (max-width: 500px) {
+  .block_quality .block_content,
+  .block_advantages .block_content{
+    gap: 15px;
+  }
+}
+
 .block_quality .block_content .block,
 .block_advantages .block_content .block {
   display: flex;
@@ -1429,7 +1437,7 @@ main .wrapper .container .container_content .add_container {
   .block_quality .block_content .block,
   .block_advantages .block_content .block {
     flex-direction: column;
-    gap: 45px;
+    gap: 15px;
   }
 }
 
@@ -1450,8 +1458,9 @@ main .wrapper .container .container_content .add_container {
   font-size: 23px;
   color: white;
 }
+
 @media (max-width: 500px) {
-  .block_advantages h2{
+  .block_advantages h2 {
     text-align: unset;
   }
 }
