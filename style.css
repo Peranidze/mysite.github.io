@@ -160,7 +160,7 @@ header {
 }
 .header_block .container_content ul{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
@@ -168,6 +168,7 @@ header {
 }
 @media (max-width: 500px) {
   .header_block .container_content ul{
+    flex-direction: column;
     justify-content: flex-start;
     gap: 25px;
   }
@@ -187,6 +188,11 @@ header {
   height: 2px;
   background: #282c34;
   transition: .3s;
+}
+@media (max-width: 500px) {
+  .header_block .container_content ul li a :after{
+    display: none;
+  }
 }
 
 .header_block .container_content ul li a:after {
