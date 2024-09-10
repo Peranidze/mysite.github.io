@@ -44,15 +44,15 @@ const choice_block_line_three = choice_block_three.querySelector('.line');
 const choice_block_text_three = choice_block_three.querySelector('h2');
 
 
-choice_block_one.addEventListener('click', () => {
-    choice_block_line_one.classList.add('line_active');
-    choice_block_text_one.classList.add('text_active');
+// choice_block_one.addEventListener('click', () => {
+//     choice_block_line_one.classList.add('line_active');
+//     choice_block_text_one.classList.add('text_active');
 
-    choice_block_line_two.classList.remove('line_active');
-    choice_block_text_two.classList.remove('text_active');
-    choice_block_line_three.classList.remove('line_active');
-    choice_block_text_three.classList.remove('text_active');
-})
+//     choice_block_line_two.classList.remove('line_active');
+//     choice_block_text_two.classList.remove('text_active');
+//     choice_block_line_three.classList.remove('line_active');
+//     choice_block_text_three.classList.remove('text_active');
+// })
 
 if (choice_block_line_one.classList.contains('line_active') && choice_block_text_one.classList.contains('text_active')) {
     choice_block_line_two.classList.remove('line_active');
@@ -61,15 +61,15 @@ if (choice_block_line_one.classList.contains('line_active') && choice_block_text
     choice_block_text_three.classList.remove('text_active');
 }
 
-choice_block_two.addEventListener('click', () => {
-    choice_block_line_two.classList.add('line_active');
-    choice_block_text_two.classList.add('text_active');
+// choice_block_two.addEventListener('click', () => {
+//     choice_block_line_two.classList.add('line_active');
+//     choice_block_text_two.classList.add('text_active');
 
-    choice_block_line_one.classList.remove('line_active');
-    choice_block_text_one.classList.remove('text_active');
-    choice_block_line_three.classList.remove('line_active');
-    choice_block_text_three.classList.remove('text_active');
-})
+//     choice_block_line_one.classList.remove('line_active');
+//     choice_block_text_one.classList.remove('text_active');
+//     choice_block_line_three.classList.remove('line_active');
+//     choice_block_text_three.classList.remove('text_active');
+// })
 
 if (choice_block_two.classList.contains('line_active') && choice_block_two.classList.contains('text_active')) {
     choice_block_text_three.classList.remove('line_active');
@@ -78,15 +78,15 @@ if (choice_block_two.classList.contains('line_active') && choice_block_two.class
     choice_block_text_one.classList.remove('text_active');
 }
 
-choice_block_three.addEventListener('click', () => {
-    choice_block_line_three.classList.add('line_active');
-    choice_block_text_three.classList.add('text_active');
+// choice_block_three.addEventListener('click', () => {
+//     choice_block_line_three.classList.add('line_active');
+//     choice_block_text_three.classList.add('text_active');
 
-    choice_block_line_two.classList.remove('line_active');
-    choice_block_text_two.classList.remove('text_active');
-    choice_block_line_one.classList.remove('line_active');
-    choice_block_text_one.classList.remove('text_active');
-})
+//     choice_block_line_two.classList.remove('line_active');
+//     choice_block_text_two.classList.remove('text_active');
+//     choice_block_line_one.classList.remove('line_active');
+//     choice_block_text_one.classList.remove('text_active');
+// })
 
 if (choice_block_line_three.classList.contains('line_active') && choice_block_text_three.classList.contains('text_active')) {
     choice_block_line_two.classList.remove('line_active');
