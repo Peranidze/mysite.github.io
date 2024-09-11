@@ -1364,6 +1364,7 @@ main .wrapper .container .container_content .add_container {
 @media (max-width: 500px) {
   .container_price {
     padding: 100px 16px;
+    padding-bottom: 150px;
   }
 }
 
