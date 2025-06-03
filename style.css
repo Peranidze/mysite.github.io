@@ -1597,7 +1597,7 @@ footer {
 
 .container_footer {
   display: flex;
-  width: 100%;
+  width: 100%; 
   max-width: 1450px;
   min-height: 90px;
 }
