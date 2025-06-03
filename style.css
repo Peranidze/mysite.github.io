@@ -1274,7 +1274,7 @@ main .wrapper .container .container_content .add_container {
 .widjet {
   position: fixed;
   width: 85px;
-  height: 270px;
+  height: fit-content;
   background-color: rgb(255 255 255 / 13%);
   border-radius: 12px;
   bottom: 3%;
